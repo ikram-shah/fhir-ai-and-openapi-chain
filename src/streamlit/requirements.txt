@@ -1,3 +1,4 @@
 openai==0.27.7
 langchain==0.0.174
 streamlit==1.22.0
+pyyaml
