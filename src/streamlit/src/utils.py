@@ -3,8 +3,6 @@ Utility functions
 """
 
 import re
-import yaml
-import os
 import streamlit as st
 
 from langchain.tools import OpenAPISpec, APIOperation
@@ -46,9 +44,9 @@ def set_logo_and_page_config():
     """
     Sets the HL7 FHIR logo image and page config.
     """
-    im = "src/streamlit/src/assets/fhir-logo.png"
+    im = "src/streamlit/src/assets/logo.png"
     st.set_page_config(page_title="FHIR AI and OpenAPI Chain", page_icon=im, layout="wide")
-    st.image(im, width=100)
+    st.image(im, width=50)
     st.header("FHIR AI and OpenAPI Chain")
     st.caption("⚠️ This is not official HL7 FHIR's implementation")
     
