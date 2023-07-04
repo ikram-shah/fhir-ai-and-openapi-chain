@@ -4,6 +4,7 @@ Utility functions
 
 import re
 import streamlit as st
+import langchain
 
 from langchain.tools import OpenAPISpec, APIOperation
 

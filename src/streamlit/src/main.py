@@ -18,8 +18,8 @@ from utils import (
 set_logo_and_page_config()
 set_sidebar()
 
-st.write("Has OpenAI API Key been set:", st.session_state.get("OPENAI_API_KEY") != None)
-st.write("Has FHIR Server details been set:", st.session_state.get("FHIR_API_BASE_URL") != None)
+st.write("OpenAI API Key added:", st.session_state.get("OPENAI_API_KEY") != None)
+st.write("FHIR Server details added:", st.session_state.get("FHIR_API_BASE_URL") != None)
 
 if check_all_config():
     operation = paths_and_methods()
