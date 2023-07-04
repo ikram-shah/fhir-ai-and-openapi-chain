@@ -5,7 +5,6 @@ FHIR - AI and OpenAPI Chain
 import streamlit as st
 
 from sidebar import setup as set_sidebar
-from langchain.requests import Requests
 from langchain.llms import OpenAI
 from langchain.chains import OpenAPIEndpointChain
 
