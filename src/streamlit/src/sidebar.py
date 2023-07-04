@@ -46,6 +46,7 @@ def setup():
 
         st.markdown("---")
         st.markdown(
-            "This tool is a work in progress. You can contribute to the project on [GitHub](https://github.com/ikram-shah/)"
+            "This tool is a work in progress. You can contribute to the project on [GitHub](https://github.com/ikram-shah/fhir-ai-and-openapi-chain)"
         )
-        st.markdown("Made by [ikramshah](https://twitter.com/ikram_shah_v)")
+        st.write('\n')
+        st.caption("⚠️ This is not official HL7 FHIR's implementation")
