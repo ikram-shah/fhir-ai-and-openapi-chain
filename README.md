@@ -1,72 +1,103 @@
- [![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/iris-fhir-template)
- [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fhir-template&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2Firis-fhir-template)
- [![Reliability Rating](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fhir-template&metric=reliability_rating)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2Firis-fhir-template)
-# fhir-ai-and-openapi-chain
-🤖 Ask questions to your FHIR API's in natural language 🤖
+# FHIR - AI and OpenAPI Chain
+
+[![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/FHIR---AI-and-OpenAPI-Chain)
+[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fhir-template&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community/fhir-ai-and-openapi-chain)
+
+💻 Contributors - Ikram Shah and Sowmiya Nagarajan.
+
+🤖 Ask question to any of your chosen FHIR API in natural language 🤖
 
 💪 Built with [OpenAI](https://openai.com/), [LangChain](https://github.com/hwchase17/langchain) & [Streamlit](https://streamlit.io/)
 
-## Prerequisites
-- Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
-- [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+<img width="1512" alt="Screenshot 2023-07-04 at 12 31 35 AM" src="https://github.com/ikram-shah/fhir-ai-and-openapi-chain/assets/17762967/30f0a468-276a-41fe-9695-9c2be85ba86d">
 
-## Installation 
+## Try online on [Streamlit](https://fhir-ai-and-openapi-chain.streamlit.app/)
+1. Get OpenAI Key from [OpenAI Platform](https://platform.openai.com/account/api-keys)
+2. Get FHIR Server API endpoint
+   - You may either enter your own sample FHIR server (unauthenticated access needed)
+   - You may create a temporary sample server in [Intersystems IRIS FHIR platform](https://learning.intersystems.com/course/view.php?id=1492)
 
-### Docker (e.g. for dev purposes)
+## Try locally using local FHIR server
 
-Clone/git pull the repo into any local directory
+### OpenAI API Key
+Get OpenAI Key from [OpenAI Platform](https://platform.openai.com/account/api-keys)
+
+### Setup Local FHIR Server
+1. Prerequisites: [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) & [Docker desktop](https://www.docker.com/products/docker-desktop)
+2. Installation:
+     ```
+     $ git clone https://github.com/ikram-shah/fhir-ai-and-openapi-chain.git
+     ```
+     ```
+     $ docker-compose up -d
+     ```
+3. Generate sample patient data [ref](https://github.com/intersystems-community/irisdemo-base-synthea)
+     ```
+     ./synthea-loader.sh 10
+     ```
+     ```
+     docker-compose exec iris iris session iris -U FHIRServer
+     ```
+     ```
+     FHIRSERVER>d ##class(fhirtemplate.Setup).LoadPatientData("/irisdev/app/output/fhir","FHIRSERVER","/fhir/r4")
+     ```
+4. Test FHIR R4 API by visitng [http://localhost:32783/fhir/r4/metadata](url)
+
+### Streamlit
+
+ ```
+ pip install -r src/streamlit/requirements.txt
+ ```
+ 
+ ```
+ streamlit run src/streamlit/src/main.py
+ ```
+     
+### Folder Structure
 
 ```
-$ git clone https://github.com/intersystems-community/iris-fhir-template.git
+fhir-ai-and-openapi-chain/
+├──src
+│   ├── streamlit/              //streamlit code             
+│   │   ├── src/
+│   │   │   ├── main.py                 
+│   │   │   └── ...
+│   └── fhirtemplate/
+│       ├── setup.cls
+│       └── ...
+.
+.
+.
+├── requirements.txt            //requirements for streamlit to run
+├── docker-compose.yml
+├── Dockerfile
+├── README.md
+└── LICENSE
 ```
 
-Open the terminal in this directory and run:
+### Known Limitations
 
-```
-$ docker-compose up -d
-```
+Due to the limitations imposed by OpenAI's token usage, if the reference data + prompt being sent to the OpenAI API exceeds the specified limit, an error may be encountered.
 
-## Streamlit
+<img width="1069" alt="Screenshot 2023-07-04 at 12 46 09 AM" src="https://github.com/ikram-shah/fhir-ai-and-openapi-chain/assets/17762967/81d6cba7-8f74-4807-9197-5a3eca62427d">
 
-### 🌲 Environment Setup
 
-```shell
-pip install -r src/streamlit/requirements.txt
-```
+### Useful Resouces
 
-```shell
-streamlit run src/streamlit/src/main.py
-```
+[HL7 OpenAPI Specifications](https://hapi.fhir.org/baseR4/api-docs)
 
-### 🔑 Requirements to try
+[FHIR Postman collection by apievangelist](https://apievangelist.com/) 
 
-1. [OpenAI API Key](https://platform.openai.com/account/api-keys)
-2. FHIR Server connection details
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/api-evangelist/workspace/fast-healthcare-interoperability-resources-fhir/collection/35240-c30a5371-445c-4046-af66-649b43842f3e?action=share&creator=4063768)
 
-## Patient data
-The template goes with 5 preloaded patents in [/data/fhir](https://github.com/intersystems-community/iris-fhir-server-template/tree/master/data/fhir) folder which are being loaded during [docker build](https://github.com/intersystems-community/iris-fhir-server-template/blob/8bd2932b34468f14530a53d3ab5125f9077696bb/iris.script#L26)
-You can generate more patients doing the following. Open shel terminal in repository folder and call:
-```
-#./synthea-loader.sh 10
-```
-this will create 10 more patients in data/fhir folder.
-Then open IRIS terminal in FHIRSERVER namespace with the following command:
-```
-docker-compose exec iris iris session iris -U FHIRServer
-```
-and call the loader method:
-```
-FHIRSERVER>d ##class(fhirtemplate.Setup).LoadPatientData("/irisdev/app/output/fhir","FHIRSERVER","/fhir/r4")
-```
-
- with using the [following project](https://github.com/intersystems-community/irisdemo-base-synthea)
-
-## Testing FHIR R4 API
-
-Open URL http://localhost:32783/fhir/r4/metadata
-you should see the output of fhir resources on this server
-
-## Development Resources
 [InterSystems IRIS FHIR Documentation](https://docs.intersystems.com/irisforhealth20203/csp/docbook/Doc.View.cls?KEY=HXFHIR)
+
 [FHIR API](http://hl7.org/fhir/resourcelist.html)
-[Developer Community FHIR section](https://community.intersystems.com/tags/fhir)
+
+[Intersystems Community](https://community.intersystems.com/tags/fhir)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+You can find the full text of the license in the [LICENSE](LICENSE) file.
