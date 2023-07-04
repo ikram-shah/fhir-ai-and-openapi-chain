@@ -27,11 +27,7 @@ if check_all_config():
 
     llm = OpenAI(openai_api_key=st.session_state.get("OPENAI_API_KEY")) 
 
-    chain = OpenAPIEndpointChain.from_api_operation(
-        operation,
-        llm,
-        return_intermediate_steps=True, 
-    )
+    chain = OpenAPIEndpointChain.from_api_operation(operation,llm)
 
     query = st.text_area("Search Input", label_visibility="visible", placeholder="Ask anything...", on_change=clear_submit)
 

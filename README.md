@@ -31,11 +31,11 @@ $ docker-compose up -d
 ### 🌲 Environment Setup
 
 ```shell
-pip install -r requirements.txt
+pip install -r src/streamlit/requirements.txt
 ```
 
 ```shell
-streamlit run src/main.py
+streamlit run src/streamlit/src/main.py
 ```
 
 ### 🔑 Requirements to try
@@ -65,16 +65,6 @@ FHIRSERVER>d ##class(fhirtemplate.Setup).LoadPatientData("/irisdev/app/output/fh
 
 Open URL http://localhost:32783/fhir/r4/metadata
 you should see the output of fhir resources on this server
-
-## Testing Postman calls
-Get fhir resources metadata
-GET call for http://localhost:32783/fhir/r4/metadata
-<img width="881" alt="Screenshot 2020-08-07 at 17 42 04" src="https://user-images.githubusercontent.com/2781759/89657453-c7cdac00-d8d5-11ea-8fed-71fa8447cc45.png">
-
-
-Open Postman and make a GET call for the preloaded Patient:
-http://localhost:32783/fhir/r4/Patient/1
-<img width="884" alt="Screenshot 2020-08-07 at 17 42 26" src="https://user-images.githubusercontent.com/2781759/89657252-71606d80-d8d5-11ea-957f-041dbceffdc8.png">
 
 ## Development Resources
 [InterSystems IRIS FHIR Documentation](https://docs.intersystems.com/irisforhealth20203/csp/docbook/Doc.View.cls?KEY=HXFHIR)
