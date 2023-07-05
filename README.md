@@ -3,11 +3,11 @@
 [![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/FHIR---AI-and-OpenAPI-Chain)
 [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fhir-template&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community/fhir-ai-and-openapi-chain)
 
-💻 Contributors - Ikram Shah and Sowmiya Nagarajan.
+💻  Contributors - [Ikram Shah](https://community.intersystems.com/user/ikram-shah) and [Sowmiya Nagarajan](https://community.intersystems.com/user/sowmiya-nagarajan).
 
-🤖 Ask question to any of your chosen FHIR API in natural language 🤖
+🤖  Ask question to any of your chosen FHIR API in natural language 🤖
 
-💪 Built with [OpenAI](https://openai.com/), [LangChain](https://github.com/hwchase17/langchain) & [Streamlit](https://streamlit.io/)
+💪  Built with [OpenAI](https://openai.com/), [LangChain](https://github.com/hwchase17/langchain) & [Streamlit](https://streamlit.io/)
 
 <img width="1512" alt="Screenshot 2023-07-04 at 12 31 35 AM" src="https://github.com/ikram-shah/fhir-ai-and-openapi-chain/assets/17762967/30f0a468-276a-41fe-9695-9c2be85ba86d">
 
