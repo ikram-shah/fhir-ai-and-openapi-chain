@@ -5,9 +5,15 @@
 
 💻  Contributors - [Ikram Shah](https://community.intersystems.com/user/ikram-shah) and [Sowmiya Nagarajan](https://community.intersystems.com/user/sowmiya-nagarajan).
 
-🤖  Ask question to any of your chosen FHIR API in natural language 🤖
-
 💪  Built with [OpenAI](https://openai.com/), [LangChain](https://github.com/hwchase17/langchain) & [Streamlit](https://streamlit.io/)
+
+## Demo
+
+https://github.com/ikram-shah/fhir-ai-and-openapi-chain/assets/17762967/99512028-8190-4581-9f0a-fd7b699c7d2c
+
+## Overview
+
+🤖  Ask question to any of your chosen FHIR API in natural language 🤖
 
 <img width="1512" alt="Screenshot 2023-07-04 at 12 31 35 AM" src="https://github.com/ikram-shah/fhir-ai-and-openapi-chain/assets/17762967/30f0a468-276a-41fe-9695-9c2be85ba86d">
 
