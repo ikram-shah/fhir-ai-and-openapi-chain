@@ -26,7 +26,8 @@ if check_all_config():
 
     llm = OpenAI(openai_api_key=st.session_state.get("OPENAI_API_KEY")) 
 
-    chain = OpenAPIEndpointChain.from_api_operation(operation,llm)
+    headers = {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials": "true", }
+    chain = OpenAPIEndpointChain.from_api_operation(operation,llm,headers=headers,verbose=True)
 
     query = st.text_area("Search Input", label_visibility="visible", placeholder="Ask anything...", on_change=clear_submit)
 

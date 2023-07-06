@@ -52,7 +52,7 @@ Get OpenAI Key from [OpenAI Platform](https://platform.openai.com/account/api-ke
 ### Streamlit
 
  ```
- pip install -r src/streamlit/requirements.txt
+ pip install -r requirements.txt
  ```
  
  ```
