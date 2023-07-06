@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="fhir-server.ZPM">
+  <Document name="fhir-ai-and-open-api-chain.ZPM">
     <Module>
-      <Name>fhir-server</Name>
-      <Version>1.2.1</Version>
-      <Description>InterSystems FHIR Server with a demo frontend</Description>
+      <Name>fhir-ai-and-open-api-chain</Name>
+      <Version>1.0.1</Version>
+      <Description>AI on FHIR Open API spec to query in natural language</Description>
       <Keywords>FHIR,Server</Keywords>
       <Packaging>module</Packaging>
     <SourcesRoot>src</SourcesRoot>
